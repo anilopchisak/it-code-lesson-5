@@ -45,14 +45,14 @@ const getDataFromResponse = (response) => {
         },
         forecast: [],
     }
-    response.forecast.forecastday.slice(1).forEach((day) => {
+    response.forecast.forecastday.forEach((day) => {
         result.forecast.push({
             'weekday_short': dayOfWeek(day.date, 'short'),
             'weather_icon': day.day.condition.icon,
             'temp': day.day.avgtemp_c,
         });
     });
-
+    console.log(result);
     return result;
 }
 

@@ -1,4 +1,4 @@
-import {API_KEY, BASE_URL, METHOD_CURRENT, METHOD_FORECAST} from './consts.js';
+import {API_KEY, BASE_URL, METHOD_FORECAST} from './consts.js';
 
 const getRequestParams = (data = null, days = null) => {
     const result = {
@@ -40,19 +40,4 @@ const fetchForecastHandler = async (data = null) => {
     return response;
 }
 
-const fetchCurrentWeatherHandler = async (data = null) => {
-    const requestParams = getRequestParams(data);
-    const response = await fetchWeather(requestParams, METHOD_CURRENT);
-    return response;
-}
-
 export const fetchDataHandler = (data = null) => fetchForecastHandler(data);
-
-// const data = {
-//     'q': 'Ufa'
-// }
-
-// const response = await fetchCurrentWeatherHandler(data);
-// const response = await fetchForecastHandler(data);
-
-// console.log(response);

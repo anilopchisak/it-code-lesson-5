@@ -43,8 +43,14 @@ const detailsLayout = (detail, value) => {
     return div;
 }
 
-const forecastLayout = () => {
-    
+const forecastLayout = (day, i) => {
+    const div = doc.createElement('div');
+    div.classList.add('forcastday');
+    if (i === 0) div.classList.add('white-widget');
+    div.innerHTML = `<img class='forecast-img' src='${day.weather_icon}' />
+                    <p>${day.weekday_short}</p>
+                    <h4>${day.temp} °C</h4>`;
+    return div;
 }
 
 const updateCurrentWeather = (data) => {
@@ -65,14 +71,16 @@ const updateDetails = (data) => {
 
 const updateForecast = (data) => {
     forecastCard.innerHTML = '';
-    const layout = forecastLayout(data);
-    forecastCard.append(layout);
+    for (let i = 0; i < data.length; i++) {
+        const layout = forecastLayout(data[i], i);
+        forecastCard.append(layout);
+    }
 }
 
 const updateDOM = (data) => {
     updateCurrentWeather(getCurrent(data));
     updateDetails(getDetails(data));
-    // updateForecast(getForecast(data));
+    updateForecast(getForecast(data));
 }
 
 export const updateDOMHandler = (data) => updateDOM(data);
