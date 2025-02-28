@@ -7,10 +7,13 @@ let dataStorage = null;
 const updateDataStorage = (data) => { dataStorage = data; }
 
 // handle fetch and display, update data storage
-const updateInfo = async (data) => {
+const updateInfo = async (data = null) => {
     const response = await fetchDataHandler(data);
-    updateDataStorage(getDataFromResponseHandler(response));
-    updateDOMHandler(dataStorage);
+    if (response.error) alert(response.error.message);
+    else {
+        updateDataStorage(getDataFromResponseHandler(response));
+        updateDOMHandler(dataStorage);
+    }
 }
 
 export const updateInfoHandler = (data = null) => updateInfo(data);

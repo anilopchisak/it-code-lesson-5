@@ -17,7 +17,7 @@ const currentHeaderLayout = (current) => {
                     <i class="fi fi-rr-marker"></i>
                     <p class="location-text">
                         <span>${current.city},</span>
-                        <span>${current.region}</span>
+                        <span>${current.country}</span>
                     </p>
                 </div>`;
     return header;

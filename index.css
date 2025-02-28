@@ -7,6 +7,8 @@
     --secondary-background-color: #222831;
     --widgets-color: #272E37;
     --linear-gradient: linear-gradient(45deg, rgb(136, 235, 239), rgb(83, 91, 230) 90%);
+    --linear-gradient-button: linear-gradient(90deg, rgb(136, 235, 239), rgb(83, 91, 230) 90%);
+    --btn-color: rgb(136, 235, 239);
     --border-radius: 25px;
 }
 
@@ -40,6 +42,7 @@ body {
 
 .weather-details {
     width: 100%;
+    height: 100%;
     z-index: 1;
     padding-left: calc(45%);
 }
@@ -52,6 +55,35 @@ body {
 .detail_name {
     font-weight: 700;
     text-transform: uppercase;
+}
+
+.location-input {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+button {
+    color: var(--white);
+    background: transparent;
+    /* background: var(--linear-gradient-button); */
+    font-weight: 700;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 3px 7px;
+}
+
+input {
+    width: 100%;
+    background-color: var(--widgets-color);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 3px 5px;
+    border: 1px solid var(--white);
+    outline: none;
 }
 
 .current-weather {
@@ -83,6 +115,5 @@ body {
     display: flex;
     gap: 7px;
     font-weight: 600;
+    line-height: 18px;
 }
-
-
