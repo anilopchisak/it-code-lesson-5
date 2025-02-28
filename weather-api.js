@@ -3,7 +3,7 @@ import {API_KEY, BASE_URL, METHOD_CURRENT, METHOD_FORECAST} from './consts.js';
 const getRequestParams = (data = null, days = null) => {
     const result = {
         'q': 'auto:ip',
-        'lang': 'ru',
+        'lang': 'en',
         // 'aqi': 'yes',
     };
     if (days !== null) result.days = days;
@@ -34,17 +34,19 @@ const fetchWeather = async (requestParams, method) => {
     }
 }
 
-const fetchForecastHandler = async (data) => {
-    const requestParams = getRequestParams(data, 3);
+const fetchForecastHandler = async (data = null) => {
+    const requestParams = getRequestParams(data, 4);
     const response = await fetchWeather(requestParams, METHOD_FORECAST);
     return response;
 }
 
-const fetchCurrentWeatherHandler = async (data) => {
+const fetchCurrentWeatherHandler = async (data = null) => {
     const requestParams = getRequestParams(data);
     const response = await fetchWeather(requestParams, METHOD_CURRENT);
     return response;
 }
+
+export const fetchDataHandler = (data = null) => fetchForecastHandler(data);
 
 // const data = {
 //     'q': 'Ufa'
