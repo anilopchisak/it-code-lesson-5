@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <title>Weather App</title>
+</head>
+<body>
+    <main id="main-section">
+        <!-- Detailed info and forecast -->
+        <section id="weather-details" class="weather-details">
+            <!-- Detailed info about current weather -->
+            <div id="details-weather" class="weather-details__current"></div>
+            <!-- Weather forecast for 3 days -->
+            <div id="forecast-weather" class="weather-details__forecast"></div>
+            <!-- Input place -->
+            <div class="location-input">
+                <input id="find-input" type="text" placeholder="Enter the city..."  maxlength="50">
+                <button id="find-btn">></button>
+            </div>
+        </section>
+        <!-- Current weather card -->
+        <section id="current-weather" class="current-weather fd-column"></section>
+    </main>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
