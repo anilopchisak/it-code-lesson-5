@@ -1,6 +1,6 @@
-const API_KEY = import.meta.env.API_KEY;
-const BASE_URL = import.meta.env.BASE_URL;
-const METHOD_FORECAST = import.meta.env.METHOD_FORECAST;
+const API_KEY = import.meta.env.VITE_API_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const METHOD_FORECAST = import.meta.env.VITE_METHOD_FORECAST;
 
 const getRequestParams = (data = null, days = null) => {
     const result = {
