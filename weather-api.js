@@ -1,4 +1,6 @@
-import {API_KEY, BASE_URL, METHOD_FORECAST} from './consts.js';
+const API_KEY = import.meta.env.VITE_API_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const METHOD_FORECAST = import.meta.env.VITE_METHOD_FORECAST;
 
 const getRequestParams = (data = null, days = null) => {
     const result = {
